@@ -1,5 +1,5 @@
 class Prescription < ActiveRecord::Base
-validates :doctor, :presence=>true
+validates :doctor_id, :presence=>true
 validates :name, :presence=>true
 belongs_to :user
 belongs_to :doctor
