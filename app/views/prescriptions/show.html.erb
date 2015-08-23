@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h3>Prescription #<%= @prescription.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Patient</dt>
+      <dd><%= @prescription.user_id %></dd>
+
+      <dt>Drug Name</dt>
+      <dd><%= @prescription.name %></dd>
+
+
+      <dt>Drug Category</dt>
+      <dd><%= @prescription.category %></dd>
+
+      <dt>Prescribed By</dt>
+      <dd><%= @prescription.doctor_id %></dd>
+
+      <dt>Taken since</dt>
+      <dd><%= @prescription.taken_since %></dd>
+
+      <dt>Appointment Where Drug was Prescribed</dt>
+      <dd><%= @prescription.appointment_id %></dd>
+
+      <dt>Dosage</dt>
+      <dd><%= @prescription.dosage %></dd>
+
+
+
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/prescriptions" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/prescriptions/<%= @prescription.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_prescription/<%= @prescription.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
