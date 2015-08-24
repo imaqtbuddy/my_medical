@@ -45,6 +45,7 @@ class PrescriptionsController < ApplicationController
 
     if @prescription.save
       redirect_to "/prescriptions", :notice => "Prescription updated successfully."
+      redirect_to :back, :notice=>"Prescription created successfully."
     else
       render 'edit'
     end

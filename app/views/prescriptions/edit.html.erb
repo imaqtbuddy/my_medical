@@ -57,7 +57,7 @@
         <label for="appointment_id" class="control-label">
           Appointment When Prescription was Written
         </label>
-        <%=select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id, :id, @prescription.appointment_id), :class => "form-control")%>
+        <%=select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id,:notes, @prescription.appointment_id), :class => "form-control")%>
         <!-- <input type="text" id="appointment_id" name="appointment_id" placeholder="Appointment" class="form-control" value="<%= @prescription.appointment_id %>"> -->
       </div>
 
