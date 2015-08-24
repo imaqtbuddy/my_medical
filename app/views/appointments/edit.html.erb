@@ -24,8 +24,7 @@
         <label for="doctor_id" class="control-label">
           Doctor
         </label>
-
-        <input type="text" id="doctor_id" name="doctor_id" placeholder="Doctor" class="form-control" value="<%= @appointment.doctor_id %>">
+<%=select_tag(:doctor_id, options_from_collection_for_select(Doctor.all, :id, :name, @appointment.doctor_id), :class => "form-control")%>
       </div>
 
       <!-- Label and input for met_on -->

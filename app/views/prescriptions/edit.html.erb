@@ -40,8 +40,7 @@
         <label for="doctor_id" class="control-label">
           Prescribed By
         </label>
-
-        <input type="text" id="doctor_id" name="doctor_id" placeholder="Doctor" class="form-control" value="<%= @prescription.doctor_id %>">
+        <%=select_tag(:doctor_id, options_from_collection_for_select(Doctor.all, :id, :name, @prescription.doctor_id), :class => "form-control")%>
       </div>
 
       <!-- Label and input for taken_since -->
@@ -58,8 +57,8 @@
         <label for="appointment_id" class="control-label">
           Appointment When Prescription was Written
         </label>
-
-        <input type="text" id="appointment_id" name="appointment_id" placeholder="Appointment" class="form-control" value="<%= @prescription.appointment_id %>">
+        <%=select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id, :id, @prescription.appointment_id), :class => "form-control")%>
+        <!-- <input type="text" id="appointment_id" name="appointment_id" placeholder="Appointment" class="form-control" value="<%= @prescription.appointment_id %>"> -->
       </div>
 
       <!-- Label and input for dosage -->
