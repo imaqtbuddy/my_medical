@@ -5,6 +5,7 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @prescription=Prescription.new
   end
 
   def new

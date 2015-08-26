@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  devise_for :users
   root 'prescriptions#index'
 
   # Routes for the Prescription resource:
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   get "/delete_appointment/:id", :controller => "appointments", :action => "destroy"
   #------------------------------
 
-  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
