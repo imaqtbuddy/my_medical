@@ -16,7 +16,13 @@
 
       <% @appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.doctor.name %></td>
+        <td>
+          <% if appointment.doctor.present? %>
+          <%= appointment.doctor.name %>
+         <% else %>
+         No doctor selected
+         <% end %>
+    </td>
         <td><%= appointment.met_on %></td>
         <td>
           <a href="/appointments/<%= appointment.id %>" class="btn btn-primary">Show</a>

@@ -14,9 +14,79 @@
 
       <dt>Phone number</dt>
       <dd><%= @doctor.phone_number %></dd>
+      <dt>Prescriptions-</dt>
+      <dd>
+        <ul class="list-group">
+          <% @doctor.prescriptions.each do |prescription| %>
+          <li class="list-group-item">
+            <%= prescription.name %>
+          </li>
+          <% end %>
 
-      <dt>This doctor has prescribed to you the following:</dt>
-      <dd><%=@doctor.prescrip
+          <li class="list-group-item">
+            <form action="/create_prescription" method="post">
+              <!-- Hidden input for authenticity token to protect from forgery -->
+              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+ <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Drug Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Enter text" class="form-control" value="<%= @prescription.name %>">
+      </div>
+
+      <!-- Label and input for category -->
+      <div class="form-group">
+        <label for="category" class="control-label">
+          Drug Category
+        </label>
+
+        <input type="text" id="category" name="category" placeholder="Category" class="form-control" value="<%= @prescription.category %>">
+      </div>
+
+
+      <!-- Label and input for doctor_id -->
+      <input name="doctor_id" type="hidden" value="<%= @doctor.id %>">
+
+
+      <!-- Label and input for taken_since -->
+      <div class="form-group">
+        <label for="taken_since" class="control-label">
+          Taken since
+        </label>
+
+        <input type="text" id="taken_since" name="taken_since" placeholder="Enter date" class="form-control" value="<%= @prescription.taken_since %>">
+      </div>
+
+      <!-- Label and input for appointment_id -->
+      <div class="form-group">
+        <label for="appointment_id" class="control-label">
+          Appointment When Prescription was Written
+        </label>
+
+       <%=select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id, :notes, @prescription.appointment_id), :class => "form-control")%>
+      </div>
+
+      <!-- Label and input for dosage -->
+      <div class="form-group">
+        <label for="dosage" class="control-label">
+          Dosage
+        </label>
+
+        <textarea id="dosage" name="dosage" placeholder="Enter text" class="form-control" rows="3"><%= @prescription.dosage %></textarea>
+      </div>
+
+
+              <button class="btn btn-success btn-block">
+                Create Prescription
+              </button>
+            </form>
+          </li>
+        </ul>
+      </dd>
+
 
 
     </dl>
