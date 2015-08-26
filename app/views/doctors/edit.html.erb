@@ -19,6 +19,9 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
 
+    <!-- Label and input for user id -->
+ <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
+
       <!-- Label and input for name -->
       <div class="form-group">
         <label for="name" class="control-label">
