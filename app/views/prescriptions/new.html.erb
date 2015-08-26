@@ -47,6 +47,8 @@
         </label>
 
         <%=select_tag(:doctor_id, options_from_collection_for_select(Doctor.all, :id, :name, @prescription.doctor_id), :class => "form-control")%>
+
+       <a href="/doctors/new">Add new doctor</a>
       </div>
 
       <!-- Label and input for taken_since -->
@@ -65,6 +67,7 @@
         </label>
 
        <%=select_tag(:appointment_id, options_from_collection_for_select(Appointment.all, :id, :notes, @prescription.appointment_id), :class => "form-control")%>
+         <a href="/appointments/new">Add new appointment</a>
       </div>
 
       <!-- Label and input for dosage -->
