@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    @doctors=current_user.doctors
+    @doctors=Doctor.all
   end
 
   def show
@@ -39,7 +39,7 @@ class DoctorsController < ApplicationController
     @doctor.name = params[:name]
 
     if @doctor.save
-      redirect_to "/doctors", :notice => "Doctor updated successfully."
+      redirect_to :back, :notice => "Doctor updated successfully."
     else
       render 'edit'
     end
