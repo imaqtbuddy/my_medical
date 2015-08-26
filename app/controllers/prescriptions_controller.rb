@@ -1,7 +1,6 @@
 class PrescriptionsController < ApplicationController
   def index
     @prescriptions = current_user.prescriptions
-    # @prescriptions = Prescription.all
   end
 
   def show
