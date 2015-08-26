@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'prescriptions#index'
+
+  root 'prescriptions#welcome'
+
+  #Welcome
+  get "/welcome",:controller=>"prescriptions",:action=>"welcome"
 
   # Routes for the Prescription resource:
   # CREATE

@@ -57,4 +57,8 @@ class PrescriptionsController < ApplicationController
 
     redirect_to "/prescriptions", :notice => "Prescription deleted."
   end
+
+  def welcome
+      render("welcome.html.erb")
+  end
 end
