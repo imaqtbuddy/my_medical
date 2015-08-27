@@ -5,6 +5,7 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
+    @appointment=Appointment.new
   end
 
   def new
@@ -22,7 +23,7 @@ class PrescriptionsController < ApplicationController
     @prescription.name = params[:name]
 
     if @prescription.save
-      redirect_to "/prescriptions", :notice => "Prescription created successfully."
+      redirect_to :back, :notice => "Prescription created successfully."
     else
       render 'new'
     end

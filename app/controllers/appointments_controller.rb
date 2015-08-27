@@ -39,7 +39,7 @@ class AppointmentsController < ApplicationController
     @appointment.met_on = params[:met_on]
 
     if @appointment.save
-      redirect_to "/appointments", :notice => "Appointment updated successfully."
+      redirect_to :back, :notice => "Appointment updated successfully."
     else
       render 'edit'
     end
