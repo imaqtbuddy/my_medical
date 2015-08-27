@@ -14,7 +14,7 @@
 
       <dt>Phone number</dt>
       <dd><%= @doctor.phone_number %></dd>
-      <dt>Prescriptions-</dt>
+      <dt>Prescriptions</dt>
       <dd>
         <ul class="list-group">
           <% @doctor.prescriptions.each do |prescription| %>
@@ -27,7 +27,7 @@
             <form action="/create_prescription" method="post">
               <!-- Hidden input for authenticity token to protect from forgery -->
               <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
+<h4>Don't see a prescription listed? Add it in below.</h4>
  <!-- Label and input for name -->
       <div class="form-group">
         <label for="name" class="control-label">
@@ -60,14 +60,13 @@
         <input type="date" id="taken_since" name="taken_since" placeholder="Enter date" class="form-control" value="<%=@prescription.taken_since%>">
       </div>
 
-      <!-- Label and input for appointment_id -->
-      <div class="form-group">
-        <label for="appointment_id" class="control-label">
-          Appointment When Prescription was Written
+          <!-- Label and input for prescription expiration-->
+   <div class="form-group">
+        <label for="expiration_date" class="control-label">
+          Prescription Expires
         </label>
+    <input type="date" id="expiration_date" name="expiration_date" placeholder="Expiration Date" class="form-control" value="<%= @prescription.expiration_date%>">
 
-       <%=select_tag(:appointment_id, options_from_collection_for_select(current_user.appointments, :id, :notes, @prescription.appointment_id), :class => "form-control")%>
-          <a href="/appointments/new">Add new appointment</a>
       </div>
 
       <!-- Label and input for dosage -->
