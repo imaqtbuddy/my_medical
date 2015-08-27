@@ -28,6 +28,9 @@
               <!-- Hidden input for authenticity token to protect from forgery -->
               <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 <h4>Don't see a prescription listed? Add it in below.</h4>
+
+<!-- Label and input for user id -->
+ <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
  <!-- Label and input for name -->
       <div class="form-group">
         <label for="name" class="control-label">
