@@ -51,20 +51,18 @@
       <!-- Label and input for taken_since -->
       <div class="form-group">
         <label for="taken_since" class="control-label">
-          Taken since
+          Date First Prescribed
         </label>
 
         <input type="date" id="taken_since" name="taken_since" placeholder="Taken since" class="form-control" value="<%= @prescription.taken_since%>">
       </div>
 
-      <!-- Label and input for appointment_id -->
-      <div class="form-group">
-        <label for="appointment_id" class="control-label">
-          Appointment When Prescription was Written
+      <!-- Label and input for prescription expiration-->
+   <div class="form-group">
+        <label for="expiration_date" class="control-label">
+          Prescription Expires
         </label>
-        <%=select_tag(:appointment_id, options_from_collection_for_select(current_user.appointments, :id,:notes, @prescription.appointment_id), :class => "form-control")%>
-           <a href="/appointments/new">Add new appointment</a>
-      </div>
+    <input type="date" id="expiration_date" name="expiration_date" placeholder="Expiration Date" class="form-control" value="<%= @prescription.expiration_date%>">
 
       <!-- Label and input for dosage -->
       <div class="form-group">

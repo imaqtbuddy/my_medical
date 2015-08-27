@@ -21,6 +21,7 @@ class PrescriptionsController < ApplicationController
     @prescription.dosage = params[:dosage]
     @prescription.category = params[:category]
     @prescription.name = params[:name]
+    @prescription.expiration_date=params[:expiration_date]
 
     if @prescription.save
       redirect_to :back, :notice => "Prescription created successfully."
@@ -43,6 +44,7 @@ class PrescriptionsController < ApplicationController
     @prescription.dosage = params[:dosage]
     @prescription.category = params[:category]
     @prescription.name = params[:name]
+    @prescription.expiration_date=params[:expiration_date]
 
     if @prescription.save
       redirect_to :back, :notice=>"Prescription created successfully."

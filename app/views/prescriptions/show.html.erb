@@ -3,8 +3,8 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <dl class="dl-horizontal">
+  <div class="auto">
+    <dl class="auto">
 
       <dt>Drug Name</dt>
       <dd><%= @prescription.name %></dd>
@@ -19,8 +19,8 @@
       <dt>Taken since</dt>
       <dd><%= @prescription.taken_since %></dd>
 
-      <dt>Appointment Where Drug was Prescribed</dt>
-      <dd><%= @prescription.appointment.notes %></dd>
+      <dt>Prescription Expiration Date</dt>
+      <dd><%= @prescription.expiration_date %></dd>
 
       <dt>Dosage</dt>
       <dd><%= @prescription.dosage %></dd>
